@@ -1,11 +1,9 @@
 import { router, publicProcedure } from "../trpc.js";
 import { observable } from "@trpc/server/observable";
 import { HFloorItem } from "gnode-api";
-import { ee } from "../../events.js";
-import z from "zod";
+import { ee } from "@/apps/server/events.js";
 
-export const floorItemsSchema = z.array(z.number());
-export type floorItems = z.infer<typeof floorItemsSchema>;
+import { floorItems } from "@/libs/shared-types/index.js";
 
 export const exampleRouter = router({
   floorItems: publicProcedure.subscription(() => {

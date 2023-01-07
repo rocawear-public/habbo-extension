@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { HFloorItem } from "gnode-api";
 import { trpc } from "../utils/trpc";
-import { floorItems } from "../../../server/trpc/router/example";
+import { floorItems } from "@/libs/shared-types/index.js";
 
 export function RoomFurnitures() {
   const [floorItems, setFloorItems] = useState<floorItems>();

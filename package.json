@@ -3,22 +3,22 @@
   "private": true,
   "version": "1.0.0",
   "workspaces": [
-    "client",
-    "server",
-    "extension"
+    "apps/client",
+    "apps/server",
+    "libs/extension"
   ],
   "scripts": {
-    "build:client": "npm run build -w client",
-    "build:server": "npm run build -w server",
-    "build:extension": "npm run build -w extension",
+    "build:client": "npm run build -w apps/client",
+    "build:server": "npm run build -w apps/server",
+    "build:extension": "npm run build -w libs/extension",
     "build": "run-s build:server build:client build:extension",
-    "dev:client": "npm run dev -w client",
-    "dev:server": "npm run dev -w server",
-    "dev:extension": "npm run dev -w extension",
+    "dev:client": "npm run dev -w apps/client",
+    "dev:server": "npm run dev -w apps/server",
+    "dev:extension": "npm run dev -w libs/extension",
     "dev": "run-p dev:*",
-    "start:client": "npm run start -w client",
-    "start:server": "npm run start -w server",
-    "start:extension": "npm run start -w extension",
+    "start:client": "npm run start -w apps/client",
+    "start:server": "npm run start -w apps/server",
+    "start:extension": "npm run start -w libs/extension",
     "start": "run-p start:*"
   },
   "devDependencies": {

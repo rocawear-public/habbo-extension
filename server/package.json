@@ -10,7 +10,6 @@
   },
   "dependencies": {
     "@trpc/server": "^10.8.1",
-    "gnode-api": "^0.2.12",
     "superjson": "^1.12.1",
     "ws": "^8.11.0",
     "zod": "^3.0.0"

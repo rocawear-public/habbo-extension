@@ -3,7 +3,7 @@ import { applyWSSHandler } from "@trpc/server/adapters/ws";
 import ws from "ws";
 import { appRouter, type AppRouter } from "./trpc/router/_app";
 import { createContext } from "./trpc/context";
-import { ext } from "./extension";
+import { ext } from "../extension";
 
 const { server, listen } = createHTTPServer({
   router: appRouter,

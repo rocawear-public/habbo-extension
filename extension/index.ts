@@ -1,8 +1,7 @@
 import { Extension, HDirection, HFloorItem } from "gnode-api";
-import { ee } from "../events";
-import type { floorItems } from "../trpc/router/example";
-import z from "zod";
-import { floorItemsSchema } from "../trpc/router/example";
+import { ee } from "../server/events";
+import type { floorItems } from "../server/trpc/router/example";
+import { floorItemsSchema } from "../server/trpc/router/example";
 
 const extensionInfo = {
   name: "My Extension",

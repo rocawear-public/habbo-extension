@@ -4,17 +4,21 @@
   "version": "1.0.0",
   "workspaces": [
     "client",
-    "server"
+    "server",
+    "extension"
   ],
   "scripts": {
     "build:client": "npm run build -w client",
     "build:server": "npm run build -w server",
-    "build": "run-s build:server build:client",
+    "build:extension": "npm run build -w extension",
+    "build": "run-s build:server build:client build:extension",
     "dev:client": "npm run dev -w client",
     "dev:server": "npm run dev -w server",
+    "dev:extension": "npm run dev -w extension",
     "dev": "run-p dev:*",
     "start:client": "npm run start -w client",
     "start:server": "npm run start -w server",
+    "start:extension": "npm run start -w extension",
     "start": "run-p start:*"
   },
   "devDependencies": {

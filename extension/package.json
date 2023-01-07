@@ -7,7 +7,7 @@
     "build": "tsc",
     "dev": "tsx watch index.ts",
     "lint": "",
-    "start": "node dist/extension/index.js"
+    "start": "node ./dist/extension/index.js"
   },
   "dependencies": {
     "gnode-api": "^0.2.12"

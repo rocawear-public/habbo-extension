@@ -2,11 +2,12 @@
   "name": "@habbo-extension/server",
   "version": "1.0.0",
   "private": true,
+  "type": "module",
   "scripts": {
     "build": "tsc",
     "dev": "tsx watch server.ts",
     "lint": "",
-    "start": "node dist/server.js"
+    "start": "node dist/server/server.js"
   },
   "dependencies": {
     "@trpc/server": "^10.8.1",

@@ -1,9 +1,10 @@
 import { useState } from "react";
 import { HFloorItem } from "gnode-api";
 import { trpc } from "../utils/trpc";
+import { floorItems } from "../../../server/trpc/router/example";
 
 export function RoomFurnitures() {
-  const [floorItems, setFloorItems] = useState<number[]>();
+  const [floorItems, setFloorItems] = useState<floorItems>();
 
   trpc.example.floorItems.useSubscription(undefined, {
     onData(data) {

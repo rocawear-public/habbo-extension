@@ -1,8 +1,11 @@
 {
   "compilerOptions": {
+    "target": "esnext",
+    "module": "esnext",
     "moduleResolution": "node",
     "esModuleInterop": true,
     "strict": true,
-    "outDir": "dist"
+    "outDir": "dist",
+    "noImplicitAny": false
   }
 }

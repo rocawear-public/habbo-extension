@@ -1,7 +1,7 @@
-import { router, publicProcedure } from "../trpc";
+import { router, publicProcedure } from "../trpc.js";
 import { observable } from "@trpc/server/observable";
 import { HFloorItem } from "gnode-api";
-import { ee } from "../../events";
+import { ee } from "../../events.js";
 import z from "zod";
 
 export const floorItemsSchema = z.array(z.number());

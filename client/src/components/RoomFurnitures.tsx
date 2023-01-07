@@ -3,7 +3,7 @@ import { HFloorItem } from "gnode-api";
 import { trpc } from "../utils/trpc";
 
 export function RoomFurnitures() {
-  const [floorItems, setFloorItems] = useState<HFloorItem[]>();
+  const [floorItems, setFloorItems] = useState<number[]>();
 
   trpc.example.floorItems.useSubscription(undefined, {
     onData(data) {
@@ -17,7 +17,7 @@ export function RoomFurnitures() {
   return (
     <div>
       {floorItems.map((item) => (
-        <div key={item.id}>{item.id}</div>
+        <div key={item}>{item}</div>
       ))}
     </div>
   );

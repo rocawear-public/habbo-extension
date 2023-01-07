@@ -11,6 +11,7 @@ const { server, listen } = createHTTPServer({
 });
 
 const wss = new ws.Server({ server });
+
 applyWSSHandler<AppRouter>({
   wss,
   router: appRouter,
@@ -19,4 +20,5 @@ applyWSSHandler<AppRouter>({
 
 ext.run();
 listen(2022);
+
 console.log("Running server");

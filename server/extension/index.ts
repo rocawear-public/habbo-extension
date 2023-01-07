@@ -1,4 +1,5 @@
 import { Extension, HDirection, HFloorItem } from "gnode-api";
+import { ee } from "../events";
 
 const extensionInfo = {
   name: "My Extension",
@@ -8,9 +9,10 @@ const extensionInfo = {
 };
 
 export const ext = new Extension(extensionInfo);
-export let floorItems: HFloorItem[] = [];
 
 ext.interceptByNameOrHash(HDirection.TOCLIENT, "Objects", (hMessage) => {
   const packet = hMessage.getPacket();
-  floorItems = HFloorItem.parse(packet);
+  const items = HFloorItem.parse(packet);
+  const floorItems: number[] = items.map((item) => item.id);
+  ee.emit("floorItems", floorItems);
 });

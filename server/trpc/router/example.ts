@@ -1,12 +1,18 @@
 import { router, publicProcedure } from "../trpc";
 import { observable } from "@trpc/server/observable";
-import { floorItems } from "../../extension/index";
 import { HFloorItem } from "gnode-api";
-
+import { ee } from "../../events";
 export const exampleRouter = router({
   floorItems: publicProcedure.subscription(() => {
-    return observable<HFloorItem[]>((emit) => {
-      emit.next(floorItems);
+    return observable<number[]>((emit) => {
+      const onNewData = (data: number[]) => {
+        emit.next(data);
+      };
+      ee.on("floorItems", onNewData);
+
+      return () => {
+        ee.off("floorItems", onNewData);
+      };
     });
   }),
 });
